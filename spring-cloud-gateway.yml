@@ -1,0 +1,33 @@
+server:
+  port: 8060
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka 
+
+
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: organisationServices
+        uri: lb://ORGANISATION-SERVICE
+        predicates:
+        - Path=/organisation-services/**
+        filters:
+        - AddRequestHeader=organisation-request, organisation-request-header
+        - AddResponseHeader=organisation-response, organisation-response-header
+      - id: odataServices
+        uri: lb://DEMO-SERVICES
+        predicates:
+        - Path=/demo-service/** 
+        filters:
+        - AddRequestHeader=demo-service-request, demo-service-request-header
+        - AddResponseHeader=demo-service-response, demo-service-response-header
+
+        
