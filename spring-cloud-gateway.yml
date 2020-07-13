@@ -1,6 +1,15 @@
 server:
   port: 8060
 
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+        - gateway
 
 
 eureka:
