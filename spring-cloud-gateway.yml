@@ -22,7 +22,10 @@ spring:
   application:
     name: spring-cloud-gateway
   cloud:
-    gateway:
+    gateway: 
+      discovery:
+        locator:
+          enabled: true
       routes:
       - id: organisationServices
         uri: lb://ORGANISATION-SERVICE
