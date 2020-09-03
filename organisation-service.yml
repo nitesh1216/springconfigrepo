@@ -1,6 +1,6 @@
+--- # -----------------------------------------------------------------------------------------------
 # -----------------------------------------------------------------------------------------------
 # Spring
-# -----------------------------------------------------------------------------------------------
 spring:
   autoconfigure:
     exclude:
@@ -17,8 +17,6 @@ spring:
       charset: UTF-8
       force-response: true
 
-
-
 # -----------------------------------------------------------------------------------------------
 # Web Server
 # -----------------------------------------------------------------------------------------------
@@ -27,7 +25,6 @@ server:
     context-path: /organisation-services
   port: ${override.port:8091}
 
-
 # -----------------------------------------------------------------------------------------------
 # Spring Boot Actuator
 # -----------------------------------------------------------------------------------------------
@@ -35,7 +32,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,prometheus,metrics
+        include: health,info,prometheus,metrics, "*"
   metrics:
     distribution:
       percentiles-histogram:
@@ -46,10 +43,13 @@ management:
         http:
           server:
             request: "0.95,0.99,0.999"
+  security:
+    enabled: false
+
 eureka:
   client:
     serviceUrl:
-      defaultZone:  http://localhost:8083/eureka 
+      defaultZone: http://localhost:8083/eureka
 
 # -----------------------------------------------------------------------------------------------
 # Swagger API configuration
@@ -60,5 +60,3 @@ swagger:
     team-name: Inventory Team
     title: Organisation Service REST API
     description: Provides organisation information
-
- 
