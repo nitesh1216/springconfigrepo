@@ -58,5 +58,5 @@ swagger:
   base-package-to-scan: au.com.reece.organisation.controller
   api-info:
     team-name: Inventory Team
-    title: Organisation Service REST API
+    title: Organisation Service REST APIII
     description: Provides organisation information
