@@ -29,7 +29,7 @@ spring:
         - id: organisationServices
           uri: lb://ORGANISATION-SERVICE
           predicates:
-            - Path=/organisation-services/**
+            - Path=/organisation-service/**
           filters:
             - AddRequestHeader=organisation-request, organisation-request-header
             - AddResponseHeader=organisation-response, organisation-response-header
