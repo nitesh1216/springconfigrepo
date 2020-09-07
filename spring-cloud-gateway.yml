@@ -20,6 +20,12 @@ eureka:
 spring:
   application:
     name: spring-cloud-gateway
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
   cloud:
     gateway:
       discovery:
@@ -40,3 +46,7 @@ spring:
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
