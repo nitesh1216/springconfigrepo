@@ -27,4 +27,6 @@ management:
       exposure:
         include: "*"
   security:
-    enabled: true
+    user:
+      name: root
+      password: s3cr3t
