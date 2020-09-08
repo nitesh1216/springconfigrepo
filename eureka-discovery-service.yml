@@ -1,6 +1,16 @@
 spring:
   application:
     name: eureka-discovery-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
 
 server:
   port: 8083
@@ -17,4 +27,4 @@ management:
       exposure:
         include: "*"
   security:
-    enabled: false
+    enabled: true
