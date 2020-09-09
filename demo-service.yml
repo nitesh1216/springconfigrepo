@@ -3,7 +3,7 @@ spring:
     name: demo-services
   datasource:
     driver-class-name: com.informix.jdbc.IfxDriver
-    password: PZg0Xu0T
+    password: PZg0Xu0
     url: jdbc:informix-sqli://d0102.reecenet.org:8962/eunice:INFORMIXSERVER=trstst2_net;IFX_LOCK_MODE_WAIT=-1;IFX_ISOLATION_LEVEL=1U;JDBCTEMP=/tmp
     username: dorgsrv
   jpa:
