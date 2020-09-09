@@ -24,10 +24,10 @@ server:
   servlet:
     context-path: /demo-service
 
-#info:
-# environment:
-#    instance: au
-#   system: inmemory
+info:
+  environment:
+    instance: au
+    system: inmemory
 
 eureka:
   client:
