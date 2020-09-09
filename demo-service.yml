@@ -39,5 +39,5 @@ management:
     web:
       exposure:
         include: "*"
-  security:
-    enabled: false
+  #security:
+  # enabled: false
