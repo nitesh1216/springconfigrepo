@@ -46,6 +46,15 @@ spring:
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
+        - id: pos
+          uri: https://trstst08.reecenet.org
+          predicates:
+            - Path=/pos/**
+          filters:
+            - AddRequestHeader=organisation-request, organisation-request-header
+            - AddResponseHeader=organisation-response, organisation-response-header
+          username: 3032t01
+          password: 3032t01
     bus:
       enabled: true
       refresh:
