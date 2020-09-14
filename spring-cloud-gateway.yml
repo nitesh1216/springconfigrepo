@@ -51,10 +51,7 @@ spring:
           predicates:
             - Path=/pos/**
           filters:
-            - AddRequestHeader=organisatio-request, organisation-request-header
-            - AddResponseHeader=organisation-response, organisation-response-header
-          username: 3032t01
-          password: 3032t01
+            - CustomFilter
     bus:
       enabled: true
       refresh:
