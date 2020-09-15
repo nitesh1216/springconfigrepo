@@ -52,6 +52,9 @@ spring:
             - Path=/pos/**
           filters:
             - name: CustomFilter
+          username: 3032t01
+          password: 3032t01
+
     bus:
       enabled: true
       refresh:
