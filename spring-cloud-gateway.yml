@@ -37,21 +37,20 @@ spring:
           predicates:
             - Path=/organisation-service/**
           filters:
-            - AddRequestHeader=organisation-request, organisation-request-header
-            - AddResponseHeader=organisation-response, organisation-response-header
+            - CustomFilter
         - id: odataServices
           uri: lb://DEMO-SERVICES
           predicates:
             - Path=/demo-service/**
           filters:
-            - AddRequestHeader=demo-service-request, demo-service-request-header
-            - AddResponseHeader=demo-service-response, demo-service-response-header
+            - CustomFilter
         - id: pos
           uri: https://trstst08.reecenet.org
           predicates:
             - Path=/pos/**
           filters:
-            - name: CustomFilter
+            - CustomFilter
+
     bus:
       enabled: true
       refresh:
