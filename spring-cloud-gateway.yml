@@ -51,7 +51,9 @@ spring:
           predicates:
             - Path=/pos/**
           filters:
-            - name: CustomFilter
+            - AddRequestHeader=demo-service-request, demo-service-request-header
+            - AddResponseHeader=demo-service-response, demo-service-response-header
+            - CustomFilter
           username: 3032t01
           password: 3032t01
 
