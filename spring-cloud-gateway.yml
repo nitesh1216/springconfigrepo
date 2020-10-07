@@ -39,6 +39,7 @@ spring:
           filters:
             - AddRequestHeader=organisation-request, organisation-request-header
             - AddResponseHeader=organisation-response, organisation-response-header
+
         - id: odataServices
           uri: lb://DEMO-SERVICES
           predicates:
@@ -47,7 +48,7 @@ spring:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
         - id: pos
-          uri: https://trstst08.reecenet.org
+          uri: forward:/productSearch/getSearchProductList
           predicates:
             - Path=/pos/**
           filters:
