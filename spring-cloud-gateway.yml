@@ -58,7 +58,7 @@ spring:
           #username: 3032t01
           #password: 3032t01
         - id: customer
-          uri: forward:/customer/**
+          uri: forward:/customer/*
           predicates:
             - Path=/pos/customer/**
           filters:
