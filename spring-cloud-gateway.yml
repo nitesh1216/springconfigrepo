@@ -50,7 +50,17 @@ spring:
         - id: pos
           uri: forward:/productSearch/getSearchProductList
           predicates:
-            - Path=/pos/**
+            - Path=/pos/productSearch/**
+          filters:
+            - AddRequestHeader=demo-service-request, demo-service-request-header
+            - AddResponseHeader=demo-service-response, demo-service-response-header
+            - CustomFilter
+          #username: 3032t01
+          #password: 3032t01
+        - id: customer
+          uri: forward:/customer/getCustomerInfo
+          predicates:
+            - Path=/pos/customer/**
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
