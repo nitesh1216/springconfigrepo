@@ -10,7 +10,7 @@ spring:
   application:
     name: organisation-service
   main:
-    banner-mode: "off"
+    banner-mode: "on"
   http:
     encoding:
       enabled: true
