@@ -47,14 +47,14 @@ spring:
         - id: odataServices
           uri: lb://DEMO-SERVICES
           predicates:
-            - Path=/demo-service/**
+            - Path=/apig/demo-service/**
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
         - id: pos
           uri: forward:/productSearch/getSearchProductList
           predicates:
-            - Path=/pos/productSearch/**
+            - Path=/apig/pos/productSearch/**
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
