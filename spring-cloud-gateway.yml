@@ -22,8 +22,7 @@ eureka:
 spring:
   application:
     name: spring-cloud-gateway
-  webflux:
-    base-path: /apig
+  
   rabbitmq:
     host: localhost
     port: 5672
@@ -47,14 +46,14 @@ spring:
         - id: odataServices
           uri: lb://DEMO-SERVICES
           predicates:
-            - Path=/apig/demo-service/**
+            - Path=/demo-service/**
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
         - id: pos
           uri: forward:/productSearch/getSearchProductList
           predicates:
-            - Path=/apig/pos/productSearch/**
+            - Path=/pos/productSearch/**
           filters:
             - AddRequestHeader=demo-service-request, demo-service-request-header
             - AddResponseHeader=demo-service-response, demo-service-response-header
