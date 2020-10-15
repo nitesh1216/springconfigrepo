@@ -22,6 +22,8 @@ eureka:
 spring:
   application:
     name: spring-cloud-gateway
+  webflux:
+    base-path: /apig
   rabbitmq:
     host: localhost
     port: 5672
